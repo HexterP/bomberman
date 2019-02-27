@@ -389,3 +389,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetTime: 2
   explode: {fileID: 100006, guid: 2687d26678b65c140adac5314c8c59d1, type: 3}
+  wave: {fileID: 8713698667767628711, guid: 079d4cc34b9fe4e4c9882dcd619a2eea, type: 3}
