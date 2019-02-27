@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
+
 
 public class Player3DExample : MonoBehaviour {
 
@@ -7,6 +9,7 @@ public class Player3DExample : MonoBehaviour {
     public Transform fire_point;
     public GameObject Grenades;
     public Animator anim;
+    public float speed_Grenades = 1.0f;
 
     int idleHash = Animator.StringToHash("idle");
     int grenadeHash = Animator.StringToHash("grenade");
@@ -28,16 +31,27 @@ public class Player3DExample : MonoBehaviour {
         {
             if (fire == false)
             {
-                Debug.Log("fire");
-                Instantiate(Grenades, fire_point.position, fire_point.rotation);
+                Debug.Log("grenade");
                 fire = true;
-
                 anim.Play("grenade");
+                StartCoroutine(create_Grenades());
             }
             else
             {
              //   anim.Play("idle");
             }
         }
-	}
+
+
+
+       
+    }
+
+    IEnumerator create_Grenades()
+    {
+        yield return new WaitForSeconds(0.7f);
+        GameObject Grenades_ = Instantiate(Grenades, fire_point.position, fire_point.rotation);
+        Grenades_.GetComponent<Rigidbody>().velocity = transform.forward * speed_Grenades;
+    }
+
 }
