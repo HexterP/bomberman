@@ -9,6 +9,12 @@ public class Grenades : MonoBehaviour
     public GameObject wave;
     public float blastRadius = 10.0f;
     public float explosionForce = 700.0f;
+    float speed_Grenades = 10.0f;
+    private void Start()
+    {
+        GetComponent<Rigidbody>().velocity = transform.forward * speed_Grenades;
+    }
+
     void Update()
     {
 

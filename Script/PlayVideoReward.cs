@@ -28,7 +28,7 @@ public class PlayVideoReward : MonoBehaviour
         log += "Tapsell Version: " + Tapsell.getVersion()+"\n";
 
 
-        Tapsell.setDebugMode(true);
+        Tapsell.setDebugMode(false);
         Tapsell.setPermissionHandlerConfig(Tapsell.PERMISSION_HANDLER_AUTO);
         Tapsell.setRewardListener(
             (TapsellAdFinishedResult result) =>

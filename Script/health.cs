@@ -9,9 +9,11 @@ public class health : MonoBehaviour
 
     public Animator ainm;
 
+    public GameObject restart_menu;
+    public GameObject joystick;
     void Start()
     {
-
+       
     }
 
     // Update is called once per frame
@@ -20,9 +22,20 @@ public class health : MonoBehaviour
         if (health_ <= 0)
         {
             ainm.Play("dead");
+
+            player_dead();
             Destroy(gameObject, 3f);
         }
     }
 
+
+   void player_dead()
+    {
+        if(gameObject.name == "Player")
+        {
+            joystick.SetActive(false);
+            restart_menu.SetActive(true);
+        }
+    }
     
 }

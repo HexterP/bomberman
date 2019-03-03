@@ -42,9 +42,6 @@ public class Player3DExample : MonoBehaviour {
             }
         }
 
-
-
-       
     }
 
     IEnumerator create_Grenades()

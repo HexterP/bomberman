@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class mainMenuController : MonoBehaviour
@@ -46,5 +47,11 @@ public class mainMenuController : MonoBehaviour
 
         PlayerPrefs.SetString("player_name", player_name.text);
         PlayerPrefs.Save();
+    }
+
+    public void restartGame()
+    {
+        Scene scene = SceneManager.GetActiveScene();
+        SceneManager.LoadScene(scene.name);
     }
 }
